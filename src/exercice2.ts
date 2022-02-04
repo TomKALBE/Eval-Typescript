@@ -8,7 +8,7 @@ interface Administrateur {
    }
 
    
-type UtilisateurAnonyme = Partial<Pick<Administrateur, "nom" | "ip">>;
+type UtilisateurAnonyme = (Required<Pick<Administrateur, 'ip'>> & Partial<Pick<Administrateur, 'nom'>>);
 
 const user:UtilisateurAnonyme= {
     nom:"test",
